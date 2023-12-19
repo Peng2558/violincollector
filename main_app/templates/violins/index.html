@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<h1>Violin List</h1>
+
+{% for violin in violins %}
+  <div class="card">
+    <div class="card-content">
+      <span class="card-title">{{ violin.name }}</span>
+      <p>Provenance: {{ violin.provenance }}</p>
+      <p>Year: {{ violin.year }}</p>
+      <p>Inventory_no: {{ violin.inventory_no }}</p>
+      <p>Tone: {{ violin.tone }}</p>
+      <p>Length: {{ violin.length }}</p>
+      <p>Price: {{ violin.price }}</p>
+     
+    </div>
+  </div>
+{% endfor %}
+
+{% endblock %}
