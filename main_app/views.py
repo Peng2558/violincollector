@@ -1,5 +1,6 @@
 from django.shortcuts import render
 from .models import Violin
+from django.views.generic.edit import CreateView
 # violins = [
 #   {'name': 'German violin', 'provenance': 'Bebenreuth', 'year': '1970', 'inventory_no': '7710','tone':'bright,clear,rich in overtones','length':'35.8 cm','price':'$3500'},
 #   {'name': 'Antique violin from Saxony', 'provenance': 'Saxony', 'year': '1900', 'inventory_no': '2342','tone':'warm','length':'35.6 cm','price':'$4700'},
@@ -25,4 +26,10 @@ def violins_detail(request, violin_id):
     return render(request,'violins/detail.html',{
      'violin':violin
     })
+
+class ViolinCreate(CreateView):
+  model = Violin
+  fields = '__all__'
+#   success_url = '/violins' in it's here will be override the detail page
+
 
