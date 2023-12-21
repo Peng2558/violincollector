@@ -11,8 +11,11 @@
       <p>Inventory_no: {{ violin.inventory_no }}</p>
       <p>Tone: {{ violin.tone }}</p>
       <p>Length: {{ violin.length }}</p>
-      <p>Price: {{ violin.price }}</p>
-     
+      <p>Price: {{ violin.price }}</p> 
+    </div>
+    <div class="card-action">
+      <a href="{% url 'violins_update' violin.id %}">Edit</a>
+      <a href="{% url 'violins_delete' violin.id %}">Delete</a>
     </div>
   </div>
 
