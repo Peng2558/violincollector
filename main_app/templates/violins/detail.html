@@ -1,11 +1,9 @@
 {% extends 'base.html' %}
 {% block content %}
 
-<h1>Violin List</h1>
+<h1>Violin Details</h1>
 
-{% for violin in violins %}
   <div class="card">
-    <a href="{% url 'detail' violin.id %}">
     <div class="card-content">
       <span class="card-title">{{ violin.name }}</span>
       <p>Provenance: {{ violin.provenance }}</p>
@@ -17,6 +15,5 @@
      
     </div>
   </div>
-{% endfor %}
 
 {% endblock %}
