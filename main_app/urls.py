@@ -11,4 +11,9 @@ urlpatterns = [
     path('violins/<int:pk>/update/', views.ViolinUpdate.as_view(), name='violins_update'),
     path('violins/<int:pk>/delete/', views.ViolinDelete.as_view(), name='violins_delete'),
     path('violins/<int:violin_id>/add_tuneup/', views.add_tuneup, name='add_tuneup'),
+    path('accessories/', views.AccessoryList.as_view(), name='accessories_index'),
+    path('accessories/<int:pk>/', views.AccessoryDetail.as_view(), name='accessories_detail'),
+    path('accessories/create/', views.AccessoryCreate.as_view(), name='accessories_create'),
+    path('accessories/<int:pk>/update', views.AccessoryUpdate.as_view(), name='accessories_update'),
+    path('accessories/<int:pk>/delete', views.AccessoryDelete.as_view(), name='accessories_delete'),
 ]
