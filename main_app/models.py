@@ -17,7 +17,7 @@ class Accessory(models.Model):
     return self.name
 
   def get_absolute_url(self):
-    return reverse('violins_detail', kwargs={'pk': self.id})
+    return reverse('accessories_detail', kwargs={'pk': self.id})
 
 
 

@@ -25,7 +25,7 @@ def violins_detail(request, violin_id):
     tuneup_form=TuneupForm()
     return render(request,'violins/detail.html',{
       'violin':violin,'tuneup_form':tuneup_form,
-      ' accessories': accessories_violin_doesnt_have
+      'accessories': accessories_violin_doesnt_have
     })
 
 def add_tuneup(request, violin_id):
@@ -42,7 +42,7 @@ def add_tuneup(request, violin_id):
 
 class ViolinCreate(CreateView):
   model = Violin
-  fields = '__all__'
+  fields = ['name','provenance','year','inventory_no','tone','length','price']
 #   success_url = '/violins' in it's here will be override the detail page
 
 class ViolinUpdate(UpdateView):
@@ -73,5 +73,15 @@ class AccessoryUpdate(UpdateView):
 class AccessoryDelete(DeleteView):
    model= Accessory
    success_url = '/accessories'
-    
+
+
+def assoc_accessory(request, violin_id, accessory_id):
+  Violin.objects.get(id=violin_id).accessories.add(accessory_id)
+  return redirect('detail', violin_id=violin_id)
+
+
+def unassoc_accessory(request,violin_id,accessory_id):
+    Violin.objects.get(id=violin_id).accessories.remove(accessory_id)
+    return redirect('detail', violin_id=violin_id)
+
                         
