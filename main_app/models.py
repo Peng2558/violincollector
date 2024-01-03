@@ -36,9 +36,9 @@ class Violin(models.Model):
     accessories = models.ManyToManyField(Accessory)
 
     def __str__(self):
-    #  return self.name
-      return f'{self.name} ({self.id})'
+     return f'{self.name} ({self.id})'
     
+
     def get_absolute_url(self):
      return reverse('detail', kwargs={'violin_id': self.id})
     
