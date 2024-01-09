@@ -18,4 +18,6 @@ urlpatterns = [
     path('accessories/<int:pk>/delete', views.AccessoryDelete.as_view(), name='accessories_delete'),
     path('accessories/<int:violin_id>/assoc_accessory/<int:accessory_id>/', views.assoc_accessory, name='assoc_accessory'),
     path('accessories/<int:violin_id>/unassoc_accessory/<int:accessory_id>/', views.unassoc_accessory, name='unassoc_accessory'),
+    path('accounts/signup/', views.signup, name='signup'),
+   
 ]
